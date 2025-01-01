@@ -1,0 +1,124 @@
+Item	Recipe	Input	Machine	Output
+Adaptive Control Unit	Adaptive Control Unit	5xAutomated Wiring, 5xCircuit Board, 1xHeavy Modular Frame, 2xComputer	Manufacturer	1xAdaptive Control Unit
+AI Expansion Server	AI Expansion Server	4xMagnetic Field Generator, 4xNeural-Quantum Processor, 4xSuperposition Oscillator, 100xExcited Photonic Matter	Quantum Encoder	4xAI Expansion Server, 100xDark Matter Residue
+AI Limiter	AI Limiter	25xCopper Sheet, 100xQuickwire	Assembler	5xAI Limiter
+Alclad Aluminum Sheet	Alclad Aluminum Sheet	30xAluminum Ingot, 10xCopper Ingot	Assembler	30xAlclad Aluminum Sheet
+Alien Power Matrix	Alien Power Matrix	12.5xSAM Fluctuator, 7.5xPower Shard, 7.5xSuperposition Oscillator, 60xExcited Photonic Matter	Quantum Encoder	2.5xAlien Power Matrix, 60xDark Matter Residue
+Alumina Solution	Alternate: Sloppy Alumina	200xBauxite, 200xWater	Refinery	240xAlumina Solution
+Aluminum Casing	Alternate: Alclad Casing	150xAluminum Ingot, 75xCopper Ingot	Assembler	112.5xAluminum Casing
+Aluminum Ingot	Alternate: Pure Aluminum Ingot	60xAluminum Scrap	Smelter	30xAluminum Ingot
+Aluminum Scrap	Alternate: Electrode Aluminum Scrap	180xAlumina Solution, 60xPetroleum Coke	Refinery	300xAluminum Scrap, 105xWater
+Assembly Director System	Assembly Director System	1.5xAdaptive Control Unit, 0.75xSupercomputer	Assembler	0.75xAssembly Director System
+Automated Wiring	Alternate: Automated Speed Wirng	3.75xStator, 75xWire, 1.875xHigh-Speed Connector	Manufacturer	7.5xAutomated Wiring
+Ballistic Warp Drive	Ballistic Warp Drive	1xThermal Propulsion Rocket, 5xSingularity Cell, 2xSuperposition Oscillator, 40xDark Matter Crystal	Manufacturer	1xBallistic Warp Drive
+Battery	Alternate: Classic Battery	45xSulfur, 52.5xAlclad Aluminum Sheet, 60xPlastic, 90xWire	Manufacturer	30xBattery
+Bauxite	Bauxite (Copper)	10xReanimated SAM, 180xCopper Ore	Converter	120xBauxite
+Biochemical Sculptor	Biochemical Sculptor	0.5xAssembly Director System, 40xFicsite Trigon, 10xWater	Blender	2xBiochemical Sculptor
+Black Powder	Alternate: Fine Black Powder	7.5xSulfur, 15xCompacted Coal	Assembler	45xBlack Powder
+Cable	Cable	60xWire	Constructor	30xCable
+Caterium Ingot	Alternate: Pure Caterium Ingot	24xCaterium Ore, 24xWater	Refinery	12xCaterium Ingot
+Caterium Ore	Caterium Ore (Copper)	10xReanimated SAM, 150xCopper Ore	Converter	120xCaterium Ore
+Circuit Board	Alternate: Caterium Circuit Board	12.5xPlastic, 37.5xQuickwire	Assembler	8.75xCircuit Board
+Cluster Nobelisk	Cluster Nobelisk	7.5xNobelisk, 10xSmokeless Powder	Assembler	2.5xCluster Nobelisk
+Compacted Coal	Alternate: Compacted Coal	25xCoal, 25xSulfur	Assembler	25xCompacted Coal
+Computer	Alternate: Caterium Computer	15xCircuit Board, 52.5xQuickwire, 22.5xRubber	Manufacturer	3.75xComputer
+Concrete	Alternate: Wet Concrete	120xLimestone, 100xWater	Refinery	80xConcrete
+Cooling System	Alternate: Cooling Device	10xHeat Sink, 2.5xMotor, 60xNitrogen Gas	Blender	5xCooling System
+Copper Ingot	Alternate: Pure Copper Ingot	15xCopper Ore, 10xWater	Refinery	37.5xCopper Ingot
+Copper Powder	Copper Powder	300xCopper Ingot	Constructor	50xCopper Powder
+Copper Sheet	Alternate: Steamed Copper Sheet	22.5xCopper Ingot, 22.5xWater	Refinery	22.5xCopper Sheet
+Crystal Oscillator	Alternate: Insulated Crystal Oscillator	18.75xQuartz Crystal, 13.125xRubber, 1.875xAI Limiter	Manufacturer	1.875xCrystal Oscillator
+Dark Matter Crystal	Alternate: Dark Matter Trap	30xTime Crystal, 150xDark Matter Residue	Particle Accelerator	60xDark Matter Crystal
+Dark Matter Residue	Dark Matter Residue	50xReanimated SAM	Converter	100xDark Matter Residue
+Diamonds	Alternate: Turbo Diamonds	600xCoal, 40xPackaged Turbofuel	Particle Accelerator	60xDiamonds
+Dissolved Silica	Alternate: Quartz Purification	120xRaw Quartz, 10xNitric Acid	Refinery	75xQuartz Crystal, 60xDissolved Silica
+Electromagnetic Control Rod	Electromagnetic Control Rod	6xStator, 4xAI Limiter	Assembler	4xElectromagnetic Control Rod
+Empty Canister	Alternate: Coated Iron Canister	30xIron Plate, 15xCopper Sheet	Assembler	60xEmpty Canister
+Empty Fluid Tank	Empty Fluid Tank	60xAluminum Ingot	Constructor	60xEmpty Fluid Tank
+Encased Industrial Beam	Alternate: Encased Industrial Pipe	24xSteel Pipe, 20xConcrete	Assembler	4xEncased Industrial Beam
+Encased Plutonium Cell	Alternate: Instant Plutonium Cell	75xNon-Fissile Uranium, 10xAluminum Casing	Particle Accelerator	10xEncased Plutonium Cell
+Encased Uranium Cell	Alternate: Infused Uranium Cell	25xUranium, 15xSilica, 25xSulfur, 75xQuickwire	Manufacturer	20xEncased Uranium Cell
+Explosive Rebar	Explosive Rebar	10xIron Rebar, 10xSmokeless Powder, 10xSteel Pipe	Manufacturer	5xExplosive Rebar
+Fabric	Polyester Fabric	30xPolymer Resin, 30xWater	Refinery	30xFabric
+Ficsite Ingot	Ficsite Ingot (Aluminum)	60xReanimated SAM, 120xAluminum Ingot	Converter	30xFicsite Ingot
+Ficsite Trigon	Ficsite Trigon	10xFicsite Ingot	Constructor	30xFicsite Trigon
+Ficsonium	Ficsonium	10xPlutonium Waste, 10xSingularity Cell, 200xDark Matter Residue	Particle Accelerator	10xFicsonium
+Ficsonium Fuel Rod	Ficsonium Fuel Rod	5xFicsonium, 5xElectromagnetic Control Rod, 100xFicsite Trigon, 50xExcited Photonic Matter	Quantum Encoder	2.5xFicsonium Fuel Rod, 50xDark Matter Residue
+Fuel	Alternate: Diluted Fuel	50xHeavy Oil Residue, 100xWater	Blender	100xFuel
+Fused Modular Frame	Alternate: Heat-Fused Frame	3xHeavy Modular Frame, 150xAluminum Ingot, 24xNitric Acid, 30xFuel	Blender	3xFused Modular Frame
+Gas Filter	Gas Filter	15xFabric, 30xCoal, 15xIron Plate	Manufacturer	7.5xGas Filter
+Heat Sink	Alternate: Heat Exchanger	30xAluminum Casing, 30xRubber	Assembler	10xHeat Sink
+Heavy Modular Frame	Alternate: Heavy Encased Frame	7.5xModular Frame, 9.375xEncased Industrial Beam, 33.75xSteel Pipe, 20.625xConcrete	Manufacturer	2.812xHeavy Modular Frame
+Heavy Oil Residue	Alternate: Heavy Oil Residue	30xCrude Oil	Refinery	40xHeavy Oil Residue, 20xPolymer Resin
+High-Speed Connector	High-Speed Connector	210xQuickwire, 37.5xCable, 3.75xCircuit Board	Manufacturer	3.75xHigh-Speed Connector
+Homing Rifle Ammo	Homing Rifle Ammo	50xRifle Ammo, 2.5xHigh-Speed Connector	Assembler	25xHoming Rifle Ammo
+Iodine-Infused Filter	Iodine-Infused Filter	3.75xGas Filter, 30xQuickwire, 3.75xAluminum Casing	Manufacturer	3.75xIodine-Infused Filter
+Ionized Fuel	Ionized Fuel	40xRocket Fuel, 2.5xPower Shard	Refinery	40xIonized Fuel, 5xCompacted Coal
+Iron Ingot	Alternate: Pure Iron Ingot	35xIron Ore, 20xWater	Refinery	65xIron Ingot
+Iron Plate	Alternate: Coated Iron Plate	37.5xIron Ingot, 7.5xPlastic	Assembler	75xIron Plate
+Iron Rebar	Iron Rebar	15xIron Rod	Constructor	15xIron Rebar
+Iron Rod	Alternate: Steel Rod	12xSteel Ingot	Constructor	48xIron Rod
+Magnetic Field Generator	Magnetic Field Generator	2.5xVersatile Framework, 1xElectromagnetic Control Rod	Assembler	1xMagnetic Field Generator
+Modular Engine	Modular Engine	2xMotor, 15xRubber, 2xSmart Plating	Manufacturer	1xModular Engine
+Modular Frame	Modular Frame	3xReinforced Iron Plate, 12xIron Rod	Assembler	2xModular Frame
+Motor	Alternate: Electric Motor	3.75xElectromagnetic Control Rod, 7.5xRotor	Assembler	7.5xMotor
+Neural-Quantum Processor	Neural-Quantum Processor	15xTime Crystal, 3xSupercomputer, 45xFicsite Trigon, 75xExcited Photonic Matter	Quantum Encoder	3xNeural-Quantum Processor, 75xDark Matter Residue
+Nitric Acid	Nitric Acid	120xNitrogen Gas, 30xWater, 10xIron Plate	Blender	30xNitric Acid
+Nobelisk	Nobelisk	20xBlack Powder, 20xSteel Pipe	Assembler	10xNobelisk
+Non-Fissile Uranium	Alternate: Fertile Uranium	25xUranium, 25xUranium Waste, 15xNitric Acid, 25xSulfuric Acid	Blender	100xNon-Fissile Uranium, 40xWater
+Nuclear Pasta	Nuclear Pasta	100xCopper Powder, 0.5xPressure Conversion Cube	Particle Accelerator	0.5xNuclear Pasta
+Nuke Nobelisk	Nuke Nobelisk	2.5xNobelisk, 10xEncased Uranium Cell, 5xSmokeless Powder, 3xAI Limiter	Manufacturer	0.5xNuke Nobelisk
+Packaged Alumina Solution	Packaged Alumina Solution	120xAlumina Solution, 120xEmpty Canister	Packager	120xPackaged Alumina Solution
+Packaged Fuel	Packaged Fuel	40xFuel, 40xEmpty Canister	Packager	40xPackaged Fuel
+Packaged Heavy Oil Residue	Packaged Heavy Oil Residue	30xHeavy Oil Residue, 30xEmpty Canister	Packager	30xPackaged Heavy Oil Residue
+Packaged Ionized Fuel	Packaged Ionized Fuel	80xIonized Fuel, 40xEmpty Fluid Tank	Packager	40xPackaged Ionized Fuel
+Packaged Nitric Acid	Packaged Nitric Acid	30xNitric Acid, 30xEmpty Fluid Tank	Packager	30xPackaged Nitric Acid
+Packaged Nitrogen Gas	Packaged Nitrogen Gas	240xNitrogen Gas, 60xEmpty Fluid Tank	Packager	60xPackaged Nitrogen Gas
+Packaged Oil	Packaged Oil	30xCrude Oil, 30xEmpty Canister	Packager	30xPackaged Oil
+Packaged Rocket Fuel	Packaged Rocket Fuel	120xRocket Fuel, 60xEmpty Fluid Tank	Packager	60xPackaged Rocket Fuel
+Packaged Sulfuric Acid	Packaged Sulfuric Acid	40xSulfuric Acid, 40xEmpty Canister	Packager	40xPackaged Sulfuric Acid
+Packaged Turbofuel	Packaged Turbofuel	20xTurbofuel, 20xEmpty Canister	Packager	20xPackaged Turbofuel
+Packaged Water	Packaged Water	60xWater, 60xEmpty Canister	Packager	60xPackaged Water
+Petroleum Coke	Petroleum Coke	40xHeavy Oil Residue	Refinery	120xPetroleum Coke
+Plastic	Recycled Plastic	30xRubber, 30xFuel	Refinery	60xPlastic
+Plutonium Fuel Rod	Alternate: Plutonium Fuel Unit	10xEncased Plutonium Cell, 0.5xPressure Conversion Cube	Assembler	0.5xPlutonium Fuel Rod
+Plutonium Pellet	Plutonium Pellet	100xNon-Fissile Uranium, 25xUranium Waste	Particle Accelerator	30xPlutonium Pellet
+Plutonium Waste		0.25xPlutonium Fuel Rod	Nuclear Power Plant	2.5xPlutonium Waste
+Polymer Resin	Alternate: Polymer Resin	60xCrude Oil	Refinery	130xPolymer Resin, 20xHeavy Oil Residue
+Power Shard	Synthetic Power Shard	10xTime Crystal, 10xDark Matter Crystal, 60xQuartz Crystal, 60xExcited Photonic Matter	Quantum Encoder	5xPower Shard, 60xDark Matter Residue
+Pressure Conversion Cube	Pressure Conversion Cube	1xFused Modular Frame, 2xRadio Control Unit	Assembler	1xPressure Conversion Cube
+Pulse Nobelisk	Pulse Nobelisk	5xNobelisk, 1xCrystal Oscillator	Assembler	5xPulse Nobelisk
+Quartz Crystal	Alternate: Pure Quartz Crystal	67.5xRaw Quartz, 37.5xWater	Refinery	52.5xQuartz Crystal
+Quickwire	Alternate: Fused Quickwire	7.5xQuickwire, 37.5xCopper Ingot	Assembler	90xQuickwire
+Radio Control Unit	Radio Control Unit	40xAluminum Casing, 1.25xCrystal Oscillator, 2.5xComputer	Manufacturer	2.5xRadio Control Unit
+Reanimated SAM	Reanimated SAM	120xSAM	Constructor	30xReanimated SAM
+Reinforced Iron Plate	Alternate: Stitched Iron Plate	18.75xIron Plate, 37.5xWire	Assembler	5.625xReinforced Iron Plate
+Rifle Ammo	Rifle Ammo	15xCopper Sheet, 10xSmokeless Powder	Assembler	75xRifle Ammo
+Rocket Fuel	Rocket Fuel	60xTurbofuel, 10xNitric Acid	Blender	100xRocket Fuel, 10xCompacted Coal
+Rotor	Alternate: Copper Rotor	22.5xCopper Sheet, 195xScrew	Assembler	11.25xRotor
+Rubber	Alternate: Recycled Rubber	30xPlastic, 30xFuel	Refinery	60xRubber
+SAM Fluctuator	SAM Fluctuator	60xReanimated SAM, 50xWire, 30xSteel Pipe	Manufacturer	10xSAM Fluctuator
+Screw	Screw	10xIron Rod	Constructor	40xScrew
+Shatter Rebar	Shatter Rebar	10xIron Rebar, 15xQuartz Crystal	Assembler	5xShatter Rebar
+Silica	Alternate: Cheap Silica	22.5xRaw Quartz, 37.5xLimestone	Assembler	52.5xSilica
+Singularity Cell	Singularity Cell	1xNuclear Pasta, 20xDark Matter Crystal, 100xIron Plate, 200xConcrete	Manufacturer	10xSingularity Cell
+Smart Plating	Smart Plating	2xReinforced Iron Plate, 2xRotor	Assembler	2xSmart Plating
+Smokeless Powder	Smokeless Powder	20xBlack Powder, 10xHeavy Oil Residue	Refinery	20xSmokeless Powder
+Stator	Alternate: Quickwire Stator	16xSteel Pipe, 60xQuickwire	Assembler	8xStator
+Steel Beam	Steel Beam	60xSteel Ingot	Constructor	15xSteel Beam
+Steel Ingot	Alternate: Solid Steel Ingot	40xIron Ingot, 40xCoal	Foundry	60xSteel Ingot
+Steel Pipe	Alternate: Iron Pipe	100xIron Ingot	Constructor	25xSteel Pipe
+Stun Rebar	Stun Rebar	10xIron Rebar, 50xQuickwire	Assembler	10xStun Rebar
+Sulfur	Sulfur (Iron)	10xReanimated SAM, 300xIron Ore	Converter	120xSulfur
+Sulfuric Acid	Sulfuric Acid	50xSulfur, 50xWater	Refinery	50xSulfuric Acid
+Supercomputer	Supercomputer	7.5xComputer, 3.75xAI Limiter, 5.625xHigh-Speed Connector, 52.5xPlastic	Manufacturer	1.875xSupercomputer
+Superposition Oscillator	Superposition Oscillator	30xDark Matter Crystal, 5xCrystal Oscillator, 45xAlclad Aluminum Sheet, 125xExcited Photonic Matter	Quantum Encoder	5xSuperposition Oscillator, 125xDark Matter Residue
+Thermal Propulsion Rocket	Thermal Propulsion Rocket	2.5xModular Engine, 1xTurbo Motor, 3xCooling System, 1xFused Modular Frame	Manufacturer	1xThermal Propulsion Rocket
+Time Crystal	Time Crystal	12xDiamonds	Converter	6xTime Crystal
+Turbo Motor	Alternate: Turbo Electric Motor	6.562xMotor, 8.438xRadio Control Unit, 4.688xElectromagnetic Control Rod, 6.562xRotor	Manufacturer	2.812xTurbo Motor
+Turbofuel	Turbofuel	22.5xFuel, 15xCompacted Coal	Refinery	18.75xTurbofuel
+Uranium	Uranium Ore (Bauxite)	10xReanimated SAM, 480xBauxite	Converter	120xUranium
+Uranium Fuel Rod	Alternate: Uranium Fuel Unit	20xEncased Uranium Cell, 2xElectromagnetic Control Rod, 0.6xCrystal Oscillator, 2xRotor	Manufacturer	0.6xUranium Fuel Rod
+Uranium Waste		0.5xUranium Fuel Rod	Nuclear Power Plant	25xUranium Waste
+Versatile Framework	Alternate: Flexible Framework	3.75xModular Frame, 22.5xSteel Beam, 30xRubber	Manufacturer	7.5xVersatile Framework
+Wire	Alternate: Iron Wire	12.5xIron Ingot	Constructor	22.5xWire
