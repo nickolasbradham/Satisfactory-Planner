@@ -2,11 +2,11 @@ package nbradham.satisPlanner;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 final class Planner {
+
+	private static final String DELIM = "\t|\r*\n";
 
 	private static HashMap<String, Float> parseList(String s) {
 		HashMap<String, Float> map = new HashMap<>();
@@ -22,20 +22,19 @@ final class Planner {
 			System.out.println("Arguments: <Item Name> <Desired Rate>\n\tExample: \"Adaptive Control Unit\" 2.5");
 			return;
 		}
-		Scanner scan = new Scanner(Planner.class.getResourceAsStream("/best.tsv")).useDelimiter("\t|\r*\n");
+		Scanner scan = new Scanner(Planner.class.getResourceAsStream("/best.tsv")).useDelimiter(DELIM);
 		scan.nextLine();
 		HashMap<String, Recipe> recipes = new HashMap<>();
 		while (scan.hasNextLine())
 			recipes.put(scan.next(),
 					new Recipe(scan.next(), parseList(scan.next()), scan.next(), parseList(scan.next())));
 		scan.close();
-		HashMap<String, Float> balance = new HashMap<>();
-		Queue<String> que = new LinkedList<>();
-		HashSet<String> queHash = new HashSet<>();
-		balance.put(args[0], -Float.parseFloat(args[1]));
-		que.offer(args[0]);
-		queHash.add(args[0]);
-		System.out.printf("Recipes:%s%nBalance: %s%nQueue: %s%n", recipes, balance, queHash);
+		scan = new Scanner(Planner.class.getResourceAsStream("/raws.tsv")).useDelimiter("\r*\n");
+		scan.nextLine();
+		HashSet<String> raws = new HashSet<>();
+		scan.forEachRemaining(s -> raws.add(s));
+		scan.close();
+		// TODO Decide to proceed.
 	}
 
 	private static final record Recipe(String name, HashMap<String, Float> ins, String machine,
