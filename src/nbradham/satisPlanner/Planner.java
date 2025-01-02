@@ -66,7 +66,12 @@ final class Planner {
 			}
 		}
 		System.out.printf("Raw Inputs: %s%nSteps:%n", needs);
-		steps.values().forEach(s -> System.out.printf("\t%f x %s%n", s.count, s.recipe));
+		steps.values().forEach(s -> {
+			System.out.printf("\t%10f x %20s: ", s.count, s.recipe.machine);
+			if (!s.recipe.name.isBlank())
+				System.out.printf("%s ", s.recipe.name);
+			System.out.printf("(%s > %s)%n", s.recipe.ins.keySet(), s.recipe.outs.keySet());
+		});
 	}
 
 	private static final record Recipe(String name, HashMap<String, Float> ins, String machine,
