@@ -38,6 +38,7 @@ Empty Fluid Tank	Empty Fluid Tank	60xAluminum Ingot	Constructor	60xEmpty Fluid T
 Encased Industrial Beam	Alternate: Encased Industrial Pipe	24xSteel Pipe, 20xConcrete	Assembler	4xEncased Industrial Beam
 Encased Plutonium Cell	Alternate: Instant Plutonium Cell	75xNon-Fissile Uranium, 10xAluminum Casing	Particle Accelerator	10xEncased Plutonium Cell
 Encased Uranium Cell	Alternate: Infused Uranium Cell	25xUranium, 15xSilica, 25xSulfur, 75xQuickwire	Manufacturer	20xEncased Uranium Cell
+Excited Photonic Matter	Excited Photonic Matter		Converter	200xExcited Photonic Matter
 Explosive Rebar	Explosive Rebar	10xIron Rebar, 10xSmokeless Powder, 10xSteel Pipe	Manufacturer	5xExplosive Rebar
 Fabric	Polyester Fabric	30xPolymer Resin, 30xWater	Refinery	30xFabric
 Ficsite Ingot	Ficsite Ingot (Aluminum)	60xReanimated SAM, 120xAluminum Ingot	Converter	30xFicsite Ingot
