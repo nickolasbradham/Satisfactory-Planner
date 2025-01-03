@@ -1,11 +1,24 @@
 package nbradham.satisPlanner;
 
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.Scanner;
+
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextArea;
+import javax.swing.SpinnerNumberModel;
 
 final class Planner {
 
@@ -22,10 +35,6 @@ final class Planner {
 	}
 
 	public static void main(String[] args) {
-		if (args.length != 2) {
-			System.out.println("Arguments: <Item Name> <Desired Rate>\n\tExample: \"Adaptive Control Unit\" 2.5");
-			return;
-		}
 		Scanner scan = new Scanner(Planner.class.getResourceAsStream("/best.tsv")).useDelimiter(DELIM);
 		scan.nextLine();
 		HashMap<String, Recipe> recipes = new HashMap<>();
@@ -33,6 +42,24 @@ final class Planner {
 			recipes.put(scan.next(),
 					new Recipe(scan.next(), parseList(scan.next()), scan.next(), parseList(scan.next())));
 		scan.close();
+		JPanel pane = new JPanel(new GridBagLayout());
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.gridy = gbc.gridx = 0;
+		gbc.anchor = GridBagConstraints.BASELINE_TRAILING;
+		pane.add(new JLabel("Item: "), gbc);
+		gbc.gridy = 1;
+		pane.add(new JLabel("Rate (items/min): "), gbc);
+		gbc.gridx = 1;
+		gbc.anchor = GridBagConstraints.BASELINE_LEADING;
+		JSpinner spin = new JSpinner(new SpinnerNumberModel(1, 0, Float.MAX_VALUE, .1));
+		spin.setPreferredSize(new Dimension(60, spin.getPreferredSize().height));
+		pane.add(spin, gbc);
+		gbc.gridy = 0;
+		String[] options = recipes.keySet().toArray(new String[recipes.size()]);
+		Arrays.sort(options);
+		JComboBox<String> itmSel = new JComboBox<>(options);
+		pane.add(itmSel, gbc);
+		JOptionPane.showMessageDialog(null, pane, "What is the desired item and rate?", JOptionPane.QUESTION_MESSAGE);
 		scan = new Scanner(Planner.class.getResourceAsStream("/raws.tsv")).useDelimiter("\r*\n");
 		HashSet<String> raws = new HashSet<>();
 		scan.forEachRemaining(s -> raws.add(s));
@@ -42,10 +69,10 @@ final class Planner {
 		HashMap<String, ProductionStep> steps = new HashMap<>();
 		Queue<String> queue = new LinkedList<>();
 		HashSet<String> queueSet = new HashSet<>();
-		needs.put(args[0], Double.parseDouble(args[1]));
-		queue.offer(args[0]);
-		queueSet.add(args[0]);
-		String item;
+		String item = (String) itmSel.getSelectedItem();
+		needs.put(item, (double) spin.getValue());
+		queue.offer(item);
+		queueSet.add(item);
 		while ((item = queue.poll()) != null) {
 			queueSet.remove(item);
 			System.out.printf("Getting recipe for %s...%n", item);
@@ -65,13 +92,19 @@ final class Planner {
 				}
 			}
 		}
-		System.out.printf("Raw Inputs: %s%nSteps:%n", needs);
+		StringBuilder sb = new StringBuilder();
+		sb.append("Raw Inputs:\n");
+		needs.forEach((k, v) -> sb.append(String.format("%s: %f%n", k, v)));
+		sb.append("\nProduction Steps:\nMachine Count x Machine\tRecipe\n");
 		steps.values().forEach(s -> {
-			System.out.printf("\t%10f x %20s: ", s.count, s.recipe.machine);
+			sb.append(String.format("%f x %s\t", s.count, s.recipe.machine));
 			if (!s.recipe.name.isBlank())
-				System.out.printf("%s ", s.recipe.name);
-			System.out.printf("(%s > %s)%n", s.recipe.ins.keySet(), s.recipe.outs.keySet());
+				sb.append(String.format("%s\t", s.recipe.name));
+			sb.append(String.format("(%s > %s)%n", s.recipe.ins.keySet(), s.recipe.outs.keySet()));
 		});
+		JTextArea out = new JTextArea(sb.toString());
+		out.setEditable(false);
+		JOptionPane.showMessageDialog(null, out);
 	}
 
 	private static final record Recipe(String name, HashMap<String, Float> ins, String machine,
