@@ -174,18 +174,6 @@ final class Planner {
 			frame.setSize(frame.getWidth(), Toolkit.getDefaultToolkit().getScreenSize().height);
 			frame.setVisible(true);
 		});
-
-//		Scanner scan = new Scanner(Planner.class.getResourceAsStream("/best.tsv")).useDelimiter(DELIM);
-//		scan.nextLine();
-//		HashMap<String, Recipe> recipes = new HashMap<>();
-//		while (scan.hasNextLine())
-//			recipes.put(scan.next(),
-//					new Recipe(scan.next(), parseList(scan.next()), scan.next(), parseList(scan.next())));
-//		scan.close();
-//		JOptionPane.showMessageDialog(null, pane, "What is the desired item and rate?", JOptionPane.QUESTION_MESSAGE);
-//		System.out.printf("Raws: %s%n", raws);
-//		scan.close();
-//		JOptionPane.showMessageDialog(null, out);
 	}
 
 	private static final record Recipe(String name, HashMap<String, Float> ins, String machine,
