@@ -49,6 +49,7 @@ final class Planner {
 			scan = new Scanner(Planner.class.getResourceAsStream("/recipes.tsv")).useDelimiter(DELIM);
 			scan.nextLine();
 			HashMap<String, ArrayList<Recipe>> recipesByOut = new HashMap<>();
+			HashMap<String, Recipe> best = new HashMap<>();
 			while (scan.hasNextLine()) {
 				Recipe recipe = new Recipe(scan.next(), parseList(scan.next()), scan.next(), parseList(scan.next()));
 				recipe.outs.keySet().forEach(o -> {
@@ -59,6 +60,9 @@ final class Planner {
 						recipes.add(recipe);
 					}
 				});
+				String s = scan.next();
+				if (!s.isBlank())
+					best.put(s, recipe);
 			}
 			scan.close();
 			JPanel recipeSelectPane = new JPanel(new GridBagLayout());
@@ -67,7 +71,11 @@ final class Planner {
 			recipesByOut.forEach((k, v) -> {
 				Recipe[] arr = v.toArray(new Recipe[v.size()]);
 				Arrays.sort(arr, (a, b) -> a.name.compareTo(b.name));
-				comboByItem.put(k, new JComboBox<>(arr));
+				JComboBox<Recipe> combo = new JComboBox<>(arr);
+				comboByItem.put(k, combo);
+				Recipe r = best.get(k);
+				if (r != null)
+					combo.setSelectedItem(r);
 			});
 			String[] items = comboByItem.keySet().toArray(new String[comboByItem.size()]);
 			Arrays.sort(items);
