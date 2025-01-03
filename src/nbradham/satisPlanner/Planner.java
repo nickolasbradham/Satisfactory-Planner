@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -66,7 +67,6 @@ final class Planner {
 			}
 			scan.close();
 			JPanel recipeSelectPane = new JPanel(new GridBagLayout());
-			GridBagConstraints gbc = new GridBagConstraints();
 			HashMap<String, JComboBox<Recipe>> comboByItem = new HashMap<>();
 			recipesByOut.forEach((k, v) -> {
 				Recipe[] arr = v.toArray(new Recipe[v.size()]);
@@ -79,8 +79,10 @@ final class Planner {
 			});
 			String[] items = comboByItem.keySet().toArray(new String[comboByItem.size()]);
 			Arrays.sort(items);
+			GridBagConstraints gbc = new GridBagConstraints();
 			gbc.gridy = 0;
 			gbc.anchor = GridBagConstraints.BASELINE_LEADING;
+			gbc.insets = new Insets(1,5,1,5);
 			for (String i : items) {
 				gbc.gridx = 0;
 				++gbc.gridy;
@@ -144,14 +146,19 @@ final class Planner {
 				}
 				StringBuilder sb = new StringBuilder();
 				sb.append("Raw Inputs:\n");
-				needs.forEach((k, v) -> sb.append(String.format("%s: %f%n", k, v)));
+				String[] needSort = needs.keySet().toArray(new String[needs.size()]);
+				Arrays.sort(needSort);
+				for (String s : needSort)
+					sb.append(String.format("%s: %f%n", s, needs.get(s)));
 				sb.append("\nProduction Steps:\nMachine%\tMachine\tRecipe\n");
-				steps.values().forEach(s -> {
+				ProductionStep[] stepSort = steps.values().toArray(new ProductionStep[steps.size()]);
+				Arrays.sort(stepSort, (a, b) -> a.recipe.name.compareTo(b.recipe.name));
+				for (ProductionStep s : stepSort) {
 					sb.append(String.format("%.4f%%\t%s\t", s.count * 100, s.recipe.machine));
 					if (!s.recipe.name.isBlank())
 						sb.append(String.format("%s\t", s.recipe.name));
 					sb.append(String.format("(%s > %s)%n", s.recipe.ins.keySet(), s.recipe.outs.keySet()));
-				});
+				}
 				out.setText(sb.toString());
 			});
 			gbc.gridy = gbc.gridx = 0;
@@ -171,8 +178,9 @@ final class Planner {
 			outPane.add(new JScrollPane(out), gbc);
 			gbc.gridwidth = 1;
 			gbc.gridx = gbc.gridy = 1;
-			gbc.anchor = GridBagConstraints.BASELINE_LEADING;
 			gbc.weightx = gbc.weighty = 0;
+			gbc.fill = GridBagConstraints.NONE;
+			gbc.anchor = GridBagConstraints.BASELINE_LEADING;
 			outPane.add(spin, gbc);
 			gbc.gridy = 0;
 			outPane.add(itmSel, gbc);
