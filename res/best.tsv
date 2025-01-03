@@ -1,7 +1,7 @@
 Item	Recipe	Input	Machine	Output
 Adaptive Control Unit	Adaptive Control Unit	5xAutomated Wiring, 5xCircuit Board, 1xHeavy Modular Frame, 2xComputer	Manufacturer	1xAdaptive Control Unit
 AI Expansion Server	AI Expansion Server	4xMagnetic Field Generator, 4xNeural-Quantum Processor, 4xSuperposition Oscillator, 100xExcited Photonic Matter	Quantum Encoder	4xAI Expansion Server, 100xDark Matter Residue
-AI Limiter	AI Limiter	25xCopper Sheet, 100xQuickwire	Assembler	5xAI Limiter
+AI Limiter	Alternate: Plastic AI Limiter	120xQuickwire, 28xPlastic	Assembler	8xAI Limiter
 Alclad Aluminum Sheet	Alclad Aluminum Sheet	30xAluminum Ingot, 10xCopper Ingot	Assembler	30xAlclad Aluminum Sheet
 Alien Power Matrix	Alien Power Matrix	12.5xSAM Fluctuator, 7.5xPower Shard, 7.5xSuperposition Oscillator, 60xExcited Photonic Matter	Quantum Encoder	2.5xAlien Power Matrix, 60xDark Matter Residue
 Alumina Solution	Alternate: Sloppy Alumina	200xBauxite, 200xWater	Refinery	240xAlumina Solution
@@ -9,7 +9,7 @@ Aluminum Casing	Alternate: Alclad Casing	150xAluminum Ingot, 75xCopper Ingot	Ass
 Aluminum Ingot	Alternate: Pure Aluminum Ingot	60xAluminum Scrap	Smelter	30xAluminum Ingot
 Aluminum Scrap	Alternate: Electrode Aluminum Scrap	180xAlumina Solution, 60xPetroleum Coke	Refinery	300xAluminum Scrap, 105xWater
 Assembly Director System	Assembly Director System	1.5xAdaptive Control Unit, 0.75xSupercomputer	Assembler	0.75xAssembly Director System
-Automated Wiring	Alternate: Automated Speed Wirng	3.75xStator, 75xWire, 1.875xHigh-Speed Connector	Manufacturer	7.5xAutomated Wiring
+Automated Wiring	Automated Wiring	2.5xStator, 50xCable	Assembler	2.5xAutomated Wiring
 Ballistic Warp Drive	Ballistic Warp Drive	1xThermal Propulsion Rocket, 5xSingularity Cell, 2xSuperposition Oscillator, 40xDark Matter Crystal	Manufacturer	1xBallistic Warp Drive
 Battery	Alternate: Classic Battery	45xSulfur, 52.5xAlclad Aluminum Sheet, 60xPlastic, 90xWire	Manufacturer	30xBattery
 Bauxite	Bauxite (Copper)	10xReanimated SAM, 180xCopper Ore	Converter	120xBauxite
@@ -62,7 +62,7 @@ Iron Rod	Alternate: Steel Rod	12xSteel Ingot	Constructor	48xIron Rod
 Magnetic Field Generator	Magnetic Field Generator	2.5xVersatile Framework, 1xElectromagnetic Control Rod	Assembler	1xMagnetic Field Generator
 Modular Engine	Modular Engine	2xMotor, 15xRubber, 2xSmart Plating	Manufacturer	1xModular Engine
 Modular Frame	Modular Frame	3xReinforced Iron Plate, 12xIron Rod	Assembler	2xModular Frame
-Motor	Alternate: Electric Motor	3.75xElectromagnetic Control Rod, 7.5xRotor	Assembler	7.5xMotor
+Motor	Motor	10xRotor, 10xStator	Assembler	5xMotor
 Neural-Quantum Processor	Neural-Quantum Processor	15xTime Crystal, 3xSupercomputer, 45xFicsite Trigon, 75xExcited Photonic Matter	Quantum Encoder	3xNeural-Quantum Processor, 75xDark Matter Residue
 Nitric Acid	Nitric Acid	120xNitrogen Gas, 30xWater, 10xIron Plate	Blender	30xNitric Acid
 Nobelisk	Nobelisk	20xBlack Powder, 20xSteel Pipe	Assembler	10xNobelisk
@@ -90,8 +90,8 @@ Power Shard	Synthetic Power Shard	10xTime Crystal, 10xDark Matter Crystal, 60xQu
 Pressure Conversion Cube	Pressure Conversion Cube	1xFused Modular Frame, 2xRadio Control Unit	Assembler	1xPressure Conversion Cube
 Pulse Nobelisk	Pulse Nobelisk	5xNobelisk, 1xCrystal Oscillator	Assembler	5xPulse Nobelisk
 Quartz Crystal	Alternate: Pure Quartz Crystal	67.5xRaw Quartz, 37.5xWater	Refinery	52.5xQuartz Crystal
-Quickwire	Alternate: Fused Quickwire	7.5xQuickwire, 37.5xCopper Ingot	Assembler	90xQuickwire
-Radio Control Unit	Radio Control Unit	40xAluminum Casing, 1.25xCrystal Oscillator, 2.5xComputer	Manufacturer	2.5xRadio Control Unit
+Quickwire	Alternate: Fused Quickwire	7.5xCaterium Ingot, 37.5xCopper Ingot	Assembler	90xQuickwire
+Radio Control Unit	Alternate: Radio Control System	1.5xCrystal Oscillator, 15xCircuit Board, 90xAluminum Casing, 30xRubber	Manufacturer	4.5xRadio Control Unit
 Reanimated SAM	Reanimated SAM	120xSAM	Constructor	30xReanimated SAM
 Reinforced Iron Plate	Alternate: Stitched Iron Plate	18.75xIron Plate, 37.5xWire	Assembler	5.625xReinforced Iron Plate
 Rifle Ammo	Rifle Ammo	15xCopper Sheet, 10xSmokeless Powder	Assembler	75xRifle Ammo
@@ -105,14 +105,14 @@ Silica	Alternate: Cheap Silica	22.5xRaw Quartz, 37.5xLimestone	Assembler	52.5xSi
 Singularity Cell	Singularity Cell	1xNuclear Pasta, 20xDark Matter Crystal, 100xIron Plate, 200xConcrete	Manufacturer	10xSingularity Cell
 Smart Plating	Smart Plating	2xReinforced Iron Plate, 2xRotor	Assembler	2xSmart Plating
 Smokeless Powder	Smokeless Powder	20xBlack Powder, 10xHeavy Oil Residue	Refinery	20xSmokeless Powder
-Stator	Alternate: Quickwire Stator	16xSteel Pipe, 60xQuickwire	Assembler	8xStator
+Stator	Stator	15xSteel Pipe, 40xWire	Assembler	5xStator
 Steel Beam	Steel Beam	60xSteel Ingot	Constructor	15xSteel Beam
 Steel Ingot	Alternate: Solid Steel Ingot	40xIron Ingot, 40xCoal	Foundry	60xSteel Ingot
 Steel Pipe	Alternate: Iron Pipe	100xIron Ingot	Constructor	25xSteel Pipe
 Stun Rebar	Stun Rebar	10xIron Rebar, 50xQuickwire	Assembler	10xStun Rebar
 Sulfur	Sulfur (Iron)	10xReanimated SAM, 300xIron Ore	Converter	120xSulfur
 Sulfuric Acid	Sulfuric Acid	50xSulfur, 50xWater	Refinery	50xSulfuric Acid
-Supercomputer	Supercomputer	7.5xComputer, 3.75xAI Limiter, 5.625xHigh-Speed Connector, 52.5xPlastic	Manufacturer	1.875xSupercomputer
+Supercomputer	Alternate: Super-State Computer	7.2xComputer, 2.4xElectromagnetic Control Rod, 24xBattery, 60xWire	Manufacturer	2.4xSupercomputer
 Superposition Oscillator	Superposition Oscillator	30xDark Matter Crystal, 5xCrystal Oscillator, 45xAlclad Aluminum Sheet, 125xExcited Photonic Matter	Quantum Encoder	5xSuperposition Oscillator, 125xDark Matter Residue
 Thermal Propulsion Rocket	Thermal Propulsion Rocket	2.5xModular Engine, 1xTurbo Motor, 3xCooling System, 1xFused Modular Frame	Manufacturer	1xThermal Propulsion Rocket
 Time Crystal	Time Crystal	12xDiamonds	Converter	6xTime Crystal
