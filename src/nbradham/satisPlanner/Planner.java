@@ -22,7 +22,7 @@ import javax.swing.SpinnerNumberModel;
 final class Planner {
 
 	private static final String DELIM = "\t|\r*\n";
-	private static final int ROUND_MAG = 1000000;
+	private static final int ROUND_MAG = 10000000;
 
 	private static HashMap<String, Float> parseList(String s) {
 		HashMap<String, Float> map = new HashMap<>();
@@ -85,18 +85,21 @@ final class Planner {
 				else
 					step.count += adj;
 				for (Entry<String, Float> e : rec.ins.entrySet()) {
-					if (!raws.contains(item = e.getKey()) && queueSet.add(item))
-						queue.offer(item);
-					needs.merge(item, (e.getValue() * adj), (a, b) -> a + b);
+					String mod = e.getKey();
+					if (!mod.equals(item)) {
+						if (!raws.contains(mod) && queueSet.add(mod))
+							queue.offer(mod);
+						needs.merge(mod, (e.getValue() * adj), (a, b) -> a + b);
+					}
 				}
 			}
 		}
 		StringBuilder sb = new StringBuilder();
 		sb.append("Raw Inputs:\n");
 		needs.forEach((k, v) -> sb.append(String.format("%s: %f%n", k, v)));
-		sb.append("\nProduction Steps:\nMachine Count x Machine\tRecipe\n");
+		sb.append("\nProduction Steps:\nMachine%\tMachine\tRecipe\n");
 		steps.values().forEach(s -> {
-			sb.append(String.format("%f x %s\t", s.count, s.recipe.machine));
+			sb.append(String.format("%.4f%%\t%s\t", s.count * 100, s.recipe.machine));
 			if (!s.recipe.name.isBlank())
 				sb.append(String.format("%s\t", s.recipe.name));
 			sb.append(String.format("(%s > %s)%n", s.recipe.ins.keySet(), s.recipe.outs.keySet()));
@@ -118,11 +121,6 @@ final class Planner {
 		ProductionStep(Recipe setRecipe, double setCount) {
 			recipe = setRecipe;
 			count = setCount;
-		}
-
-		@Override
-		public String toString() {
-			return String.format("ProductionStep[recipe=%s, count=%f]", recipe, count);
 		}
 	}
 }
