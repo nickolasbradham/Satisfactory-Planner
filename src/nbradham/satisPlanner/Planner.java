@@ -134,7 +134,7 @@ final class Planner {
 			rawTable.getColumnModel().getColumn(1).setCellRenderer(renderer);
 			prodTable.setFillsViewportHeight(true);
 			rawTable.setFillsViewportHeight(true);
-			calculate.addActionListener(_ -> {
+			calculate.addActionListener(ev -> {
 				HashMap<String, Double> needs = new HashMap<>();
 				HashMap<String, ProductionStep> steps = new HashMap<>();
 				Queue<String> queue = new LinkedList<>();
