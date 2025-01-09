@@ -9,6 +9,7 @@ Alternate: Adhered Iron Plate	11.25xIron Plate, 3.75xRubber	Assembler	3.75xReinf
 Alternate: Alclad Casing	150xAluminum Ingot, 75xCopper Ingot	Assembler	112.5xAluminum Casing	Aluminum Casing
 Alternate: Aluminum Beam	22.5xAluminum Ingot	Constructor	22.5xSteel Beam	
 Alternate: Aluminum Rod	7.5xAluminum Ingot	Constructor	52.5xIron Rod	
+Alternate: Automated Miner	4xSteel Pipe, 4xIron Plate	Assembler	1xPortable Miner	Portable Miner
 Alternate: Automated Speed Wirng	3.75xStator, 75xWire, 1.875xHigh-Speed Connector	Manufacturer	7.5xAutomated Wiring	
 Alternate: Basic Iron Ingot	25xIron Ingot, 40xLimestone	Foundry	50xIron Ingot	
 Alternate: Biocoal	37.5xBiomass	Constructor	45xCoal	

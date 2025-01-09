@@ -1,4 +1,5 @@
-A simple util for calculating efficient late game production chains.
+A simple util for calculating efficient production chains.
 
-![image](https://github.com/user-attachments/assets/e771b89b-8933-423d-b2f9-33ebb3d8fa9f)
-![image](https://github.com/user-attachments/assets/1f9b4807-080d-4c7e-bf54-0bc62a0e5dd5)
+![image](https://github.com/user-attachments/assets/0a0863a6-f1ee-4b38-a742-97cec577bf31)
+
+The default selections are the most efficient recipes as determined by [This](https://github.com/nickolasbradham/Satisfactory-Recipe-Analyzer) program.

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -24,10 +25,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
-import javax.swing.JTextArea;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 final class Planner {
 
@@ -93,10 +99,8 @@ final class Planner {
 				gbc.gridx = 1;
 				recipeSelectPane.add(comboByItem.get(i), gbc);
 			}
-			JTextArea out = new JTextArea();
-			out.setEditable(false);
 			JScrollPane scrollRecipes = new JScrollPane(recipeSelectPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-					JScrollPane.HORIZONTAL_SCROLLBAR_NEVER), scrollOut = new JScrollPane(out);
+					JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 			scrollRecipes.getVerticalScrollBar().setUnitIncrement(20);
 			scrollRecipes.setBorder(new TitledBorder("Recipe Selection"));
 			JSpinner spin = new JSpinner(new SpinnerNumberModel(1, 0, Float.MAX_VALUE, .1));
@@ -108,7 +112,29 @@ final class Planner {
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setLayout(new BorderLayout());
 			JButton calculate = new JButton("Calculate");
-			calculate.addActionListener(event -> {
+			DefaultTableModel prodModel = new CustomTableModel(
+					new String[] { "Prod %", "Machine", "Recipe", "Input", "Output" }),
+					rawModel = new CustomTableModel(new String[] { "Item", "Rate" });
+			JTable prodTable = new JTable(prodModel), rawTable = new JTable(rawModel);
+			DefaultTableCellRenderer renderer = new DefaultTableCellRenderer() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				protected final void setValue(Object value) {
+					setText(String.format("%.4f", value));
+				}
+			};
+			TableColumnModel columnModel = prodTable.getColumnModel();
+			TableColumn percent = columnModel.getColumn(0);
+			percent.setCellRenderer(renderer);
+			percent.setPreferredWidth(50);
+			short[] widths = { 50, 100, 500, 200 };
+			for (byte i = 0; i < widths.length; ++i)
+				columnModel.getColumn(i + 1).setPreferredWidth(widths[i]);
+			rawTable.getColumnModel().getColumn(1).setCellRenderer(renderer);
+			prodTable.setFillsViewportHeight(true);
+			rawTable.setFillsViewportHeight(true);
+			calculate.addActionListener(_ -> {
 				HashMap<String, Double> needs = new HashMap<>();
 				HashMap<String, ProductionStep> steps = new HashMap<>();
 				Queue<String> queue = new LinkedList<>();
@@ -151,26 +177,25 @@ final class Planner {
 						else
 							n = Byte.MIN_VALUE;
 				}
-				StringBuilder sb = new StringBuilder();
-				sb.append("Raw Inputs:\n");
 				String[] needSort = needs.keySet().toArray(new String[needs.size()]);
 				Arrays.sort(needSort);
+				rawModel.setRowCount(0);
 				for (String s : needSort)
-					sb.append(String.format("%s: %f%n", s, needs.get(s)));
-				sb.append("\nProduction Steps:\nMachine%\tMachine\tRecipe\n");
+					rawModel.addRow(new Object[] { s, needs.get(s) });
 				ProductionStep[] stepSort = steps.values().toArray(new ProductionStep[steps.size()]);
 				Arrays.sort(stepSort, (a, b) -> a.recipe.name.compareTo(b.recipe.name));
+				prodModel.setNumRows(0);
 				for (ProductionStep s : stepSort) {
-					sb.append(String.format("%.4f%%\t%s\t", s.count * 100, s.recipe.machine));
-					if (!s.recipe.name.isBlank())
-						sb.append(String.format("%s\t", s.recipe.name));
-					sb.append(String.format("(%s > %s)%n", s.recipe.ins.keySet(), s.recipe.outs.keySet()));
+					String ins = s.recipe.ins.keySet().toString(), outs = s.recipe.outs.keySet().toString();
+					prodModel.addRow(new Object[] { s.count * 100, s.recipe.machine,
+							s.recipe.name.isBlank() ? "Default" : s.recipe.name, ins.substring(1, ins.length() - 1),
+							outs.substring(1, outs.length() - 1) });
 				}
-				out.setText(sb.toString());
 			});
 			gbc.gridy = gbc.gridx = 0;
 			gbc.anchor = GridBagConstraints.BASELINE_TRAILING;
-			JPanel outPane = new JPanel(new GridBagLayout()), center = new JPanel(new GridBagLayout());
+			JPanel outPane = new JPanel(new GridBagLayout()), center = new JPanel(new GridBagLayout()),
+					prodTablePane = new JPanel(new GridLayout(0, 1)), rawTablePane = new JPanel(new GridLayout(0, 1));
 			outPane.setBorder(new TitledBorder("Production Output"));
 			outPane.add(new JLabel("Item: "), gbc);
 			gbc.gridy = 1;
@@ -185,12 +210,19 @@ final class Planner {
 			gbc.gridx = 1;
 			gbc.anchor = GridBagConstraints.LINE_START;
 			center.add(calculate, gbc);
+			prodTablePane.add(prodTable.getTableHeader());
+			prodTablePane.add(new JScrollPane(prodTable));
+			rawTablePane.add(rawTable.getTableHeader());
+			rawTablePane.add(new JScrollPane(rawTable));
 			gbc.gridx = 0;
 			gbc.gridy = 1;
 			gbc.weightx = gbc.weighty = 1;
 			gbc.gridwidth = 2;
 			gbc.fill = GridBagConstraints.BOTH;
-			center.add(scrollOut, gbc);
+			JTabbedPane tabPane = new JTabbedPane();
+			tabPane.addTab("Production", prodTablePane);
+			tabPane.addTab("Raw Inputs", rawTablePane);
+			center.add(tabPane, gbc);
 			frame.add(scrollRecipes, BorderLayout.LINE_START);
 			frame.add(center, BorderLayout.CENTER);
 			frame.pack();
@@ -216,6 +248,19 @@ final class Planner {
 		ProductionStep(Recipe setRecipe, double setCount) {
 			recipe = setRecipe;
 			count = setCount;
+		}
+	}
+
+	private static final class CustomTableModel extends DefaultTableModel {
+		private static final long serialVersionUID = 1L;
+
+		public CustomTableModel(String[] headers) {
+			super(null, headers);
+		}
+
+		@Override
+		public boolean isCellEditable(int row, int column) {
+			return false;
 		}
 	}
 }
