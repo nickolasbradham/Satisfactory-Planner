@@ -14,6 +14,8 @@ import java.util.LinkedList;
 import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.function.BiFunction;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -29,6 +31,7 @@ import javax.swing.border.TitledBorder;
 
 final class Planner {
 
+	private static final BiFunction<Double, Double, Double> MERGER = (a, b) -> a + b;
 	private static final String DELIM = "\t|\r*\n";
 	private static final int ROUND_MAG = 10000000;
 
@@ -82,7 +85,7 @@ final class Planner {
 			GridBagConstraints gbc = new GridBagConstraints();
 			gbc.gridy = 0;
 			gbc.anchor = GridBagConstraints.BASELINE_LEADING;
-			gbc.insets = new Insets(1,5,1,5);
+			gbc.insets = new Insets(1, 5, 1, 5);
 			for (String i : items) {
 				gbc.gridx = 0;
 				++gbc.gridy;
@@ -129,11 +132,15 @@ final class Planner {
 							step.count += adj;
 						for (Entry<String, Float> e : rec.ins.entrySet()) {
 							String mod = e.getKey();
-							if (!mod.equals(item)) {
-								if (!raws.contains(mod) && queueSet.add(mod))
-									queue.offer(mod);
-								needs.merge(mod, (e.getValue() * adj), (a, b) -> a + b);
-							}
+							if (!raws.contains(mod) && queueSet.add(mod))
+								queue.offer(mod);
+							needs.merge(mod, e.getValue() * adj, MERGER);
+						}
+						for (Entry<String, Float> e : rec.outs.entrySet()) {
+							String mod = e.getKey();
+							if (!mod.equals(item) && !raws.contains(mod) && queueSet.add(mod))
+								queue.offer(mod);
+							needs.merge(mod, -(e.getValue() * adj), MERGER);
 						}
 					}
 					if (++n == Byte.MAX_VALUE)
