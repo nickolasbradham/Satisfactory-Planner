@@ -3,7 +3,7 @@ Adaptive Control Unit	5xAutomated Wiring, 5xCircuit Board, 1xHeavy Modular Frame
 AI Expansion Server	4xMagnetic Field Generator, 4xNeural-Quantum Processor, 4xSuperposition Oscillator, 100xExcited Photonic Matter	Quantum Encoder	4xAI Expansion Server, 100xDark Matter Residue	AI Expansion Server
 AI Limiter	25xCopper Sheet, 100xQuickwire	Assembler	5xAI Limiter	
 Alclad Aluminum Sheet	30xAluminum Ingot, 10xCopper Ingot	Assembler	30xAlclad Aluminum Sheet	Alclad Aluminum Sheet
-Alien DNA Capsule	10xAlien Protein	Constructor	10xAlien DNA Capsule	
+Alien DNA Capsule	10xAlien Protein	Constructor	10xAlien DNA Capsule	Alien DNA Capsule
 Alien Power Matrix	12.5xSAM Fluctuator, 7.5xPower Shard, 7.5xSuperposition Oscillator, 60xExcited Photonic Matter	Quantum Encoder	2.5xAlien Power Matrix, 60xDark Matter Residue	Alien Power Matrix
 Alternate: Adhered Iron Plate	11.25xIron Plate, 3.75xRubber	Assembler	3.75xReinforced Iron Plate	
 Alternate: Alclad Casing	150xAluminum Ingot, 75xCopper Ingot	Assembler	112.5xAluminum Casing	Aluminum Casing
@@ -87,6 +87,7 @@ Alternate: Quickwire Cable	7.5xQuickwire, 5xRubber	Assembler	27.5xCable
 Alternate: Quickwire Stator	16xSteel Pipe, 60xQuickwire	Assembler	8xStator	
 Alternate: Radio Connection Unit	15xHeat Sink, 7.5xHigh-Speed Connector, 45xQuartz Crystal	Manufacturer	3.75xRadio Control Unit	
 Alternate: Radio Control System	1.5xCrystal Oscillator, 15xCircuit Board, 90xAluminum Casing, 30xRubber	Manufacturer	4.5xRadio Control Unit	Radio Control Unit
+Alternate: Recycled Plastic	30xRubber, 30xFuel	Refinery	60xPlastic	Plastic
 Alternate: Recycled Rubber	30xPlastic, 30xFuel	Refinery	60xRubber	Rubber
 Alternate: Rigor Motor	3.75xRotor, 3.75xStator, 1.25xCrystal Oscillator	Manufacturer	7.5xMotor	
 Alternate: Rubber Concrete	100xLimestone, 20xRubber	Assembler	90xConcrete	
@@ -105,7 +106,7 @@ Alternate: Stitched Iron Plate	18.75xIron Plate, 37.5xWire	Assembler	5.625xReinf
 Alternate: Super-State Computer	7.2xComputer, 2.4xElectromagnetic Control Rod, 24xBattery, 60xWire	Manufacturer	2.4xSupercomputer	Supercomputer
 Alternate: Tempered Caterium Ingot	45xCaterium Ore, 15xPetroleum Coke	Foundry	22.5xCaterium Ingot	
 Alternate: Tempered Copper Ingot	25xCopper Ore, 40xPetroleum Coke	Foundry	60xCopper Ingot	
-Alternate: Turbo Blend Fuel	15xFuel, 30xHeavy Oil Residue, 22.5xSufur, 22.5xPetroleum Coke	Blender	45xTurbofuel	
+Alternate: Turbo Blend Fuel	15xFuel, 30xHeavy Oil Residue, 22.5xSulfur, 22.5xPetroleum Coke	Blender	45xTurbofuel	Turbofuel
 Alternate: Turbo Diamonds	600xCoal, 40xPackaged Turbofuel	Particle Accelerator	60xDiamonds	Diamonds
 Alternate: Turbo Electric Motor	6.562xMotor, 8.438xRadio Control Unit, 4.688xElectromagnetic Control Rod, 6.562xRotor	Manufacturer	2.812xTurbo Motor	Turbo Motor
 Alternate: Turbo Heavy Fuel	37.5xHeavy Oil Residue, 30xCompacted Coal	Refinery	30xTurbofuel	
@@ -126,7 +127,7 @@ Biochemical Sculptor	0.5xAssembly Director System, 40xFicsite Trigon, 10xWater	B
 Biomass (Alien Protein)	15xAlien Protein	Constructor	1500xBiomass	
 Biomass (Leaves)	120xLeaves	Constructor	60xBiomass	
 Biomass (Mycelia)	15xMycelia	Constructor	150xBiomass	
-Biomass (Wood)	60xWood	Constructor	300xBiomass	
+Biomass (Wood)	60xWood	Constructor	300xBiomass	Biomass
 Black Powder	15xCoal, 15xSulfur	Assembler	30xBlack Powder	
 Cable	60xWire	Constructor	30xCable	Cable
 Caterium Ingot	45xCaterium Ore	Smelter	15xCaterium Ingot	
@@ -166,7 +167,7 @@ Ficsonium Fuel Rod	5xFicsonium, 5xElectromagnetic Control Rod, 100xFicsite Trigo
 Fuel	60xCrude Oil	Refinery	40xFuel, 30xPolymer Resin	
 Fused Modular Frame	1.5xHeavy Modular Frame, 75xAluminum Casing, 37.5xNitrogen Gas	Blender	1.5xFused Modular Frame	
 Gas Filter	15xFabric, 30xCoal, 15xIron Plate	Manufacturer	7.5xGas Filter	Gas Filter
-Gas Nobelisk	5xNobelisk, 50xBiomass	Assembler	5xGas Nobelisk	
+Gas Nobelisk	5xNobelisk, 50xBiomass	Assembler	5xGas Nobelisk	Gas Nobelisk
 Hatcher Protein	20xHatcher Remains	Constructor	20xAlien Protein	
 Heat Sink	37.5xAlclad Aluminum Sheet, 22.5xCopper Sheet	Assembler	7.5xHeat Sink	
 Heavy Modular Frame	10xModular Frame, 40xSteel Pipe, 10xEncased Industrial Beam, 240xScrew	Manufacturer	2xHeavy Modular Frame	
@@ -174,14 +175,14 @@ High-Speed Connector	210xQuickwire, 37.5xCable, 3.75xCircuit Board	Manufacturer	
 Hog Protein	20xHog Remains	Constructor	20xAlien Protein	
 Homing Rifle Ammo	50xRifle Ammo, 2.5xHigh-Speed Connector	Assembler	25xHoming Rifle Ammo	Homing Rifle Ammo
 Iodine-Infused Filter	3.75xGas Filter, 30xQuickwire, 3.75xAluminum Casing	Manufacturer	3.75xIodine-Infused Filter	Iodine-Infused Filter
-Ionized Fuel	40xRocket Fuel, 2.5xPower Shard	Refinery	40xIonized Fuel, 5xCompacted Coal	Ionized Fuel, 5xCompacted Coal
+Ionized Fuel	40xRocket Fuel, 2.5xPower Shard	Refinery	40xIonized Fuel, 5xCompacted Coal	Ionized Fuel
 Iron Ingot	30xIron Ore	Smelter	30xIron Ingot	
 Iron Ore (Limestone)	10xReanimated SAM, 240xLimestone	Converter	120xIron Ore	
 Iron Plate	30xIron Ingot	Constructor	20xIron Plate	
 Iron Rebar	15xIron Rod	Constructor	15xIron Rebar	Iron Rebar
 Iron Rod	15xIron Ingot	Constructor	15xIron Rod	
 Limestone (Sulfur)	10xReanimated SAM, 20xSulfur	Converter	120xLimestone	
-Liquid Biofuel	90xSolid Biofuel, 45xWater	Refinery	60xLiquid Biofuel	
+Liquid Biofuel	90xSolid Biofuel, 45xWater	Refinery	60xLiquid Biofuel	Liquid Biofuel
 Magnetic Field Generator	2.5xVersatile Framework, 1xElectromagnetic Control Rod	Assembler	1xMagnetic Field Generator	Magnetic Field Generator
 Modular Engine	2xMotor, 15xRubber, 2xSmart Plating	Manufacturer	1xModular Engine	Modular Engine
 Modular Frame	3xReinforced Iron Plate, 12xIron Rod	Assembler	2xModular Frame	Modular Frame
@@ -222,7 +223,6 @@ Radio Control Unit	40xAluminum Casing, 1.25xCrystal Oscillator, 2.5xComputer	Man
 Raw Quartz (Bauxite)	10xReanimated SAM, 100xBauxite	Converter	120xRaw Quartz	
 Raw Quartz (Coal)	10xReanimated SAM, 240xCoal	Converter	120xRaw Quartz	
 Reanimated SAM	120xSAM	Constructor	30xReanimated SAM	Reanimated SAM
-Recycled Plastic	30xRubber, 30xFuel	Refinery	60xPlastic	Plastic
 Reinforced Iron Plate	30xIron Plate, 60xScrew	Assembler	5xReinforced Iron Plate	
 Residual Fuel	60xHeavy Oil Residue	Refinery	40xFuel	
 Residual Plastic	60xPolymer Resin, 20xWater	Refinery	20xPlastic	
@@ -238,13 +238,13 @@ Silica	22.5xRaw Quartz	Constructor	37.5xSilica
 Singularity Cell	1xNuclear Pasta, 20xDark Matter Crystal, 100xIron Plate, 200xConcrete	Manufacturer	10xSingularity Cell	Singularity Cell
 Smart Plating	2xReinforced Iron Plate, 2xRotor	Assembler	2xSmart Plating	Smart Plating
 Smokeless Powder	20xBlack Powder, 10xHeavy Oil Residue	Refinery	20xSmokeless Powder	Smokeless Powder
-Solid Biofuel	120xBiomass	Constructor	60xSolid Biofuel	
+Solid Biofuel	120xBiomass	Constructor	60xSolid Biofuel	Solid Biofuel
 Spitter Protein	20xSpitter Remains	Constructor	20xAlien Protein	
 Stator	15xSteel Pipe, 40xWire	Assembler	5xStator	Stator
 Steel Beam	60xSteel Ingot	Constructor	15xSteel Beam	Steel Beam
 Steel Ingot	45xIron Ore, 45xCoal	Foundry	45xSteel Ingot	
 Steel Pipe	30xSteel Ingot	Constructor	20xSteel Pipe	
-Stringer Protein	20xStinger Remains	Constructor	20xAlien Protein	
+Stringer Protein	20xStinger Remains	Constructor	20xAlien Protein	Alien Protein
 Stun Rebar	10xIron Rebar, 50xQuickwire	Assembler	10xStun Rebar	Stun Rebar
 Sulfur (Coal)	10xReanimated SAM, 200xCoal	Converter	120xSulfur	
 Sulfur (Iron)	10xReanimated SAM, 300xIron Ore	Converter	120xSulfur	Sulfur
@@ -255,15 +255,15 @@ Synthetic Power Shard	10xTime Crystal, 10xDark Matter Crystal, 60xQuartz Crystal
 Thermal Propulsion Rocket	2.5xModular Engine, 1xTurbo Motor, 3xCooling System, 1xFused Modular Frame	Manufacturer	1xThermal Propulsion Rocket	Thermal Propulsion Rocket
 Time Crystal	12xDiamonds	Converter	6xTime Crystal	Time Crystal
 Turbo Motor	7.5xCooling System, 3.75xRadio Control Unit, 7.5xMotor, 45xRubber	Manufacturer	1.875xTurbo Motor	
-Turbo Rifle Ammo	125xRifle Ammo, 15xAluminum Casing, 15xTurbo Fuel	Blender	250xTurbo Rifle Ammo	
-Turbo Rifle Ammo	125xRifle Ammo, 15xAluminum Casing, 15xPackaged Turbo Fuel	Manufacturer	250xTurbo Rifle Ammo	
-Turbofuel	22.5xFuel, 15xCompacted Coal	Refinery	18.75xTurbofuel	Turbofuel
+Turbo Rifle Ammo	125xRifle Ammo, 15xAluminum Casing, 15xTurbofuel	Blender	250xTurbo Rifle Ammo	Turbo Rifle Ammo
+Turbo Rifle Ammo	125xRifle Ammo, 15xAluminum Casing, 15xPackaged Turbofuel	Manufacturer	250xTurbo Rifle Ammo	
+Turbofuel	22.5xFuel, 15xCompacted Coal	Refinery	18.75xTurbofuel	
 Unpackaged Alumina Solution	120xPackaged Alumina Solution	Packager	120xAlumina Solution, 120xEmpty Canister	
 Unpackaged Fuel	60xPackaged Fuel	Packager	60xFuel, 60xEmpty Canister	
 Unpackaged Heavy Oil Residue	20xPackaged Heavy Oil Residue	Packager	20xHeavy Oil Residue, 20xEmpty Canister	
 Unpackaged Ionized Fuel	40xPackaged Ionized Fuel	Packager	80xIonized Fuel, 40xEmpty Fluid Tank	
 Unpackaged Liquid Biofuel	60xPackaged Liquid Biofuel	Packager	60xLiquid Biofuel, 60xEmpty Canister	
-Unpackaged Nitric Acid	20xPackaged Nitroc Acid	Packager	20xNitric Acid, 20xEmpty Fluid Tank	
+Unpackaged Nitric Acid	20xPackaged Nitric Acid	Packager	20xNitric Acid, 20xEmpty Fluid Tank	
 Unpackaged Nitrogen Gas	60xPackaged Nitrogen Gas	Packager	240xNitrogen Gas, 60xEmpty Fluid Tank	
 Unpackaged Oil	60xPackaged Oil	Packager	60xCrude Oil, 60xEmpty Canister	
 Unpackaged Rocket Fuel	60xPackaged Rocket Fuel	Packager	120xRocket Fuel, 60xEmpty Fluid Tank	

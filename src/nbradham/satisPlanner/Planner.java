@@ -7,6 +7,8 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Toolkit;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -52,29 +54,35 @@ final class Planner {
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(() -> {
-			Scanner scan = new Scanner(Planner.class.getResourceAsStream("/raws.tsv")).useDelimiter("\r*\n");
-			HashSet<String> raws = new HashSet<>();
-			scan.forEachRemaining(s -> raws.add(s));
-			scan.close();
-			scan = new Scanner(Planner.class.getResourceAsStream("/recipes.tsv")).useDelimiter(DELIM);
-			scan.nextLine();
 			HashMap<String, ArrayList<Recipe>> recipesByOut = new HashMap<>();
 			HashMap<String, Recipe> best = new HashMap<>();
-			while (scan.hasNextLine()) {
-				Recipe recipe = new Recipe(scan.next(), parseList(scan.next()), scan.next(), parseList(scan.next()));
-				recipe.outs.keySet().forEach(o -> {
-					if (!raws.contains(o)) {
-						ArrayList<Recipe> recipes = recipesByOut.get(o);
-						if (recipes == null)
-							recipesByOut.put(o, recipes = new ArrayList<>());
-						recipes.add(recipe);
-					}
-				});
-				String s = scan.next();
-				if (!s.isBlank())
-					best.put(s, recipe);
+			HashSet<String> raws = new HashSet<>();
+			try {
+				Scanner scan = new Scanner(new File("raws.tsv")).useDelimiter(DELIM);
+				scan.forEachRemaining(s -> raws.add(s));
+				scan.close();
+				scan = new Scanner(new File("recipes.tsv")).useDelimiter(DELIM);
+				scan.nextLine();
+				while (scan.hasNextLine()) {
+					Recipe recipe = new Recipe(scan.next(), parseList(scan.next()), scan.next(),
+							parseList(scan.next()));
+					recipe.outs.keySet().forEach(o -> {
+						if (!raws.contains(o)) {
+							ArrayList<Recipe> recipes = recipesByOut.get(o);
+							if (recipes == null)
+								recipesByOut.put(o, recipes = new ArrayList<>());
+							recipes.add(recipe);
+						}
+					});
+					String s = scan.next();
+					if (!s.isBlank())
+						best.put(s, recipe);
+				}
+				scan.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+				return;
 			}
-			scan.close();
 			JPanel recipeSelectPane = new JPanel(new GridBagLayout());
 			HashMap<String, JComboBox<Recipe>> comboByItem = new HashMap<>();
 			recipesByOut.forEach((k, v) -> {
